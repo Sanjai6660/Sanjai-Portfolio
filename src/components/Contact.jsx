@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
@@ -9,30 +8,32 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // EmailJS credentials (using environment variables if available, otherwise placeholders)
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'your_service_id';
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'your_template_id';
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'your_public_key';
-
-    emailjs.sendForm(serviceId, templateId, formRef.current, {
-      publicKey: publicKey,
-    })
-    .then((result) => {
-        console.log('SUCCESS!', result.text);
+    const formData = new FormData(formRef.current);
+    
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/astaduke6660@gmail.com", {
+        method: "POST",
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+      });
+      if (response.ok) {
         setSubmitStatus('success');
         formRef.current.reset();
-    }, (error) => {
-        console.log('FAILED...', error.text);
+      } else {
         setSubmitStatus('error');
-    })
-    .finally(() => {
-        setIsSubmitting(false);
-    });
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
