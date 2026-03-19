@@ -1,0 +1,109 @@
+:root {
+  /* Colors */
+  --color-primary: #0a0a0a;
+  --color-secondary: #1a1a1a;
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+  --color-text: #ffffff;
+  --color-text-muted: #9ca3af;
+  --color-text-dim: #6b7280;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-glass: rgba(255, 255, 255, 0.03);
+  --color-glass-border: rgba(255, 255, 255, 0.05);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+  
+  /* Spacing */
+  --spacing-section: 6rem;
+  --spacing-container: 72rem;
+  
+  /* Shadows */
+  --shadow-accent: 0 0 20px rgba(59, 130, 246, 0.3);
+  
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  background-color: var(--color-primary);
+  line-height: 1.6;
+}
+
+section {
+  padding: var(--spacing-section) 1rem;
+  position: relative;
+}
+
+.container {
+  max-width: var(--spacing-container);
+  margin: 0 auto;
+}
+
+.glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--color-glass-border);
+}
+
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  transform: scale(1.05);
+}
+
+.btn-glass {
+  background: var(--color-glass);
+  color: white;
+  border: 1px solid var(--color-glass-border);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
