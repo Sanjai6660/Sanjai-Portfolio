@@ -39,6 +39,9 @@ const Navbar = () => {
           <a href="https://linkedin.com/in/sanjai-2002cp" target="_blank" rel="noopener noreferrer" className="social-link">
             <Linkedin size={18} />
           </a>
+          <a href="mailto:srisanjai96@gmail.com" className="social-link">
+            <Mail size={18} />
+          </a>
         </div>
       </div>
     </motion.nav>

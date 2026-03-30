@@ -16,7 +16,7 @@ const Contact = () => {
     const formData = new FormData(formRef.current);
     
     try {
-      const response = await fetch("https://formsubmit.co/ajax/astaduke6660@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/srisanjai96@gmail.com", {
         method: "POST",
         body: formData,
         headers: {
@@ -68,7 +68,9 @@ const Contact = () => {
               </div>
               <div className="info-content">
                 <h3>Email Me</h3>
-                <p>srisanjai96@gmail.com</p>
+                <a href="mailto:srisanjai96@gmail.com" className="contact-link">
+                  srisanjai96@gmail.com
+                </a>
                 <p className="info-subtext">Always open for inquiries</p>
               </div>
             </div>
@@ -90,7 +92,14 @@ const Contact = () => {
               </div>
               <div className="info-content">
                 <h3>Call Me</h3>
-                <p>+91 73396 45169</p>
+                <a 
+                  href="https://wa.me/917339645169" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="contact-link"
+                >
+                  +91 73396 45169
+                </a>
                 <p className="info-subtext">Available for discussions</p>
               </div>
             </div>

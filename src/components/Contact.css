@@ -70,8 +70,14 @@
   margin-bottom: 0.5rem;
 }
 
-.info-content p {
+.info-content p, .contact-link {
   color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--color-accent);
 }
 
 .info-subtext {

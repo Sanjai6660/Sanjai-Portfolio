@@ -34,7 +34,7 @@ const Projects = () => {
       description: 'A fully responsive restaurant website with modern UI principles. Implemented optimized navigation and image lazy-loading to improve user experience.',
       tech: ['HTML5', 'CSS3', 'JavaScript'],
       github: 'https://github.com/Sanjai6660/Restaurant-website',
-      live: 'https://example.com',
+      live: 'https://restaurant-website-eosin-three.vercel.app',
       image: '/restaurant-website-preview.jpg'
     }
   ];
