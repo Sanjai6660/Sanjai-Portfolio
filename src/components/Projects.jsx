@@ -6,6 +6,22 @@ import './Projects.css';
 const Projects = () => {
   const projects = [
     {
+      title: 'Student Course Management',
+      description: 'A comprehensive platform for managing academic courses, students, and instructors with a Spring Boot backend and React frontend.',
+      tech: ['React', 'CSS', 'Spring Boot', 'MySQL'],
+      github: 'https://github.com/Sanjai6660/Student-Course-Management',
+      live: 'https://student-course-management-6660.vercel.app',
+      image: '/student-management-preview.png'
+    },
+    {
+      title: 'Sign-in Page Design',
+      description: 'A modern and sleek Sign-in page design with social login buttons and a clean user interface. Focuses on premium UI/UX aesthetics.',
+      tech: ['HTML', 'CSS', 'React'],
+      github: 'https://github.com/Sanjai6660',
+      live: 'https://log-in-page-6660.vercel.app',
+      image: '/signin-design-preview.png'
+    },
+    {
       title: 'Movie Website',
       description: 'A single-page movie browsing application using React.js and functional components. Integrated TMDB REST API to fetch and display real-time movie data.',
       tech: ['React.js', 'React Hooks', 'React Router', 'REST API'],
@@ -50,14 +66,14 @@ const Projects = () => {
               onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}
             >
               <div className="project-image-container">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
+                <img
+                  src={project.image}
+                  alt={project.title}
                   className="project-image"
                 />
                 <div className="project-overlay">
-                  <a 
-                    href={project.github} 
+                  <a
+                    href={project.github}
                     className="overlay-link"
                     onClick={(e) => e.stopPropagation()}
                     target="_blank"
@@ -65,8 +81,8 @@ const Projects = () => {
                   >
                     <Github size={20} />
                   </a>
-                  <a 
-                    href={project.live} 
+                  <a
+                    href={project.live}
                     className="overlay-link"
                     onClick={(e) => e.stopPropagation()}
                     target="_blank"
@@ -76,7 +92,7 @@ const Projects = () => {
                   </a>
                 </div>
               </div>
-              
+
               <div className="project-info">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">
